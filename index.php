@@ -8,11 +8,52 @@
     
     <!-- Import du style bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/styles/style.css">
 </head>
 <body>
-    <h1>Test de création de page</h1>
+    <div>
+        <img src="./src/img/Logo _V_Parrot_3.png" alt="Logo de l'entreprise du Garage Vincent Parrot" width="50px" height="50px">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Garage Vincent Parrot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nos véhicules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nos services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contactez nous !</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Espace Collaborateurs</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
     
-    <button class="btn btn-primary">Validez</button>
+    <div>
+        <h1><b>Bienvenue au garage Vincent Parrot !</b></h1>
+            <br>
+        <p>
+            Fort d’une quinzaine d’année d’expérience dans la réparation automobile, le garage Vincent Parrot a ouvert ses portes à Toulouse en 2021. Nous nous engageons à vous offrir un service exceptionnel avec des réparations de qualité et une expérience client que vous ne trouverez pas ailleurs. Que vous ayez besoin d’une simple révision, d’une vidange ou d’une réparation de votre carrosserie, nous nous engageons à répondre à toutes vos exigences. Notre personnel compétent et amical se fera un plaisir de répondre à toutes vos questions sur les différentes réparations à amener à votre véhicule et vous tenir informer de l’avancée de vos réparations. Vous retrouverez également tout un panel de véhicule d’occasion à la vente révisés et mises en conformité par nos soins. Pour toutes informations, n’hésitez pas à nous contacter.
+        </p>
+        <img src="./src/img/auto-repair-3691962_1280.jpg" alt="Image de garagiste">
+    </div>
+
+    <h2>Ils nous ont fait confiance</h2>
+
+    <img src="./src/img/flèche gauche.png" alt="Flèche dirigée vers la gauche">
+    <!-- Ajouter les avis -->
+    <img src="./src/img/flèche droite.png" alt="Flèche dirigée vers la droite">
 
 
 <!-- Import du script bootstrap -->
