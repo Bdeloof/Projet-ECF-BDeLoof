@@ -1,0 +1,35 @@
+.custom-bg {
+  background-color: RGB(217,35,50);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title-site {
+  color: RGB(217,35,50);
+  text-align: center;
+}
+
+.garage-presentation {
+  display: flex;
+  align-items: center;
+}
+
+.text-presentation {
+  padding-right: 30px;
+  text-align: justify;
+}
+
+.section-confiance {
+  display: flex;
+}
+
+.btn-donner-avis {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
