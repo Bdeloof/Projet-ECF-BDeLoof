@@ -18,7 +18,7 @@
         <div class="container-fluid custom-bg">
             <nav class="navbar navbar-expand-lg navbar-light">
             <img src="./src/img/Logo _V_Parrot_3.png" alt="Logo de l'entreprise du Garage Vincent Parrot" width="50px" height="50px">
-                <a class="navbar-brand" href="#">Garage Vincent Parrot</a>
+                <a class="navbar-brand" href="index.php">Garage Vincent Parrot</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

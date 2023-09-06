@@ -18,7 +18,7 @@
         <div class="container-fluid custom-bg">
             <nav class="navbar navbar-expand-lg navbar-light">
             <img src="./src/img/Logo _V_Parrot_3.png" alt="Logo de l'entreprise du Garage Vincent Parrot" width="50px" height="50px">
-                <a class="navbar-brand" href="#">Garage Vincent Parrot</a>
+                <a class="navbar-brand" href="index.php">Garage Vincent Parrot</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,16 +49,20 @@
 <!-- --------------------------- MAIN --------------------------- -->
 
     <main>
-      <h2 class="title-site">Consultez notre catalogue de véhicule d'occasion</h2>
-      <div class="container section-confiance">
-          <img src="./src/img/flèche gauche.png" width="25px" height="25px" alt="Flèche dirigée vers la gauche">
-          <!-- Ajouter les avis -->
-          <img src="./src/img/flèche droite.png" width="25px" height="25px" alt="Flèche dirigée vers la droite">
-          <br>
-          <div class="container btn-donner-avis">
-              <button type="button" class="btn btn-danger">Donnez votre avis</button>
-          </div>
-      </div>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Adresse E-mail</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse E-mail">
+            <small id="emailHelp" class="form-text text-muted">Gardez vos identifiants pour vous</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mot de passe</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe">
+        </div>
+        <button type="submit" class="btn custom-bg">Se connecter</button>
+    </form>
+
     </main>
 
 

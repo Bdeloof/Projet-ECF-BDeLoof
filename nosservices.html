@@ -18,7 +18,7 @@
         <div class="container-fluid custom-bg">
             <nav class="navbar navbar-expand-lg navbar-light">
             <img src="./src/img/Logo _V_Parrot_3.png" alt="Logo de l'entreprise du Garage Vincent Parrot" width="50px" height="50px">
-                <a class="navbar-brand" href="#">Garage Vincent Parrot</a>
+                <a class="navbar-brand" href="index.php">Garage Vincent Parrot</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,16 +49,41 @@
 <!-- --------------------------- MAIN --------------------------- -->
 
     <main>
-      <h2 class="title-site">Consultez notre catalogue de véhicule d'occasion</h2>
-      <div class="container section-confiance">
-          <img src="./src/img/flèche gauche.png" width="25px" height="25px" alt="Flèche dirigée vers la gauche">
-          <!-- Ajouter les avis -->
-          <img src="./src/img/flèche droite.png" width="25px" height="25px" alt="Flèche dirigée vers la droite">
-          <br>
-          <div class="container btn-donner-avis">
-              <button type="button" class="btn btn-danger">Donnez votre avis</button>
-          </div>
-      </div>
+
+        <table class="table table-bordered">
+            <thead class="custom-bg">
+                <tr>
+                    <th scope="col">Forfait</th>
+                    <th scope="col">Prestation</th>
+                    <th scope="col">Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Révision générale</td>
+                    <td>Vidange, pression des pneus, mise à niveau des liquides du véhicules</td>
+                    <td>265€</td>
+                </tr>
+                <tr>
+                    <td>Révision prémium</td>
+                    <td>Révision générale, changement des disques et plaquettes de freins, changement des filtres du véhicules</td>
+                    <td>499€</td>
+                </tr>
+                <tr>
+                    <td>Climatisation</td>
+                    <td>Contrôle et recharge de la climatisation</td>
+                    <td>49€</td>
+                </tr>
+                <tr>
+                    <td>Montage pneu</td>
+                    <td>Changement du pneus et parallelisme (*)</td>
+                    <td>75€</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <p>* Prix du pneu non compris</p>
+
     </main>
 
 

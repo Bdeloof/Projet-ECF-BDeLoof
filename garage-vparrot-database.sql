@@ -39,3 +39,10 @@ CREATE TABLE
     telephone VARCHAR(25) NOT NULL,
     question TEXT NOT NULL
   };
+
+CREATE TABLE
+  schedule {
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    lundi_vendredi VARCHAR(50),
+    samedi VARCHAR(50)
+  }
