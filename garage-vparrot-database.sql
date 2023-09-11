@@ -28,7 +28,7 @@ CREATE TABLE
   );
 
 INSERT INTO user (id, email, motdepasse, estAdmin)
-VALUES (0, vincentparrotecf, vincentparrotgarage, 1);
+VALUES (0, vincentparrotecf@gmail.com, vincentparrotgarage, 1);
 
 CREATE TABLE
   demande-info {
