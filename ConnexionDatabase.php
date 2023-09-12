@@ -1,17 +1,17 @@
 <?php
 
 class ConnexionDatabase {
-  private static $initialisation = null;
-  private $db;
+  public static $initialisation = null;
+  public $connexion;
 
   public function __construct() {
     $dbName = "garage-vparrot-database";
     $port = 3306;
     $username = "root";
-    $password = "";
+    $password = "VParrot";
 
     try {
-      $this->db = new PDO("mysql:host=localhost;dbname=$dbName;port=$port, $username, $password");
+      $this->connexion = new PDO("mysql:host=localhost;dbname=$dbName;port=$port, $username, $password");
     } catch(PDOException $exception) {
       echo $exception->getMessage();
     }
@@ -25,6 +25,6 @@ class ConnexionDatabase {
   }
 
   public function getConnexion() {
-    return $this->db;
+    return $this->connexion;
   }
 }

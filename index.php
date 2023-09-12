@@ -98,12 +98,12 @@
             Nos horaires :
             <?php
 
-            require_once 'ConnexionDatabase.php';
+            require 'connexionDatabase.php';
 
-            $database = ConnexionDatabase::getInstance();
-            $connexion = $database->getConnexion();
+            $connexionDatabase = ConnexionDatabase::getInstance();
+            $connexion = $connexionDatabase->getConnexion();
 
-            $declaration = $db->query("SELECT * FROM schedule");
+            $declaration = $connexion->query("SELECT * FROM schedule");
             $row = $declaration->fetch(PDO::FETCH_ASSOC);
             if ($declaration->rowCount() > 0) {
                 $lundiVendredi = $row['lundi_vendredi'];
