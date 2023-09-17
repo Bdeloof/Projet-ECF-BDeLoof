@@ -49,16 +49,37 @@
 <!-- --------------------------- MAIN --------------------------- -->
 
     <main>
-      <h2 class="title-site">Consultez notre catalogue de véhicule d'occasion</h2>
-      <div class="container section-confiance">
-          <img src="./src/img/flèche gauche.png" width="25px" height="25px" alt="Flèche dirigée vers la gauche">
-          <!-- Ajouter les avis -->
-          <img src="./src/img/flèche droite.png" width="25px" height="25px" alt="Flèche dirigée vers la droite">
-          <br>
-          <div class="container btn-donner-avis">
-              <button type="button" class="btn btn-danger">Donnez votre avis</button>
-          </div>
-      </div>
+        <h2 class="title-site">Contactez nous !</h2>
+
+        <form>
+            <div class="form-group">
+                <label for="inputNom">Nom</label>
+                <input type="nom" class="form-control" id="inputNom" aria-describedby="nom" placeholder="Entrez votre nom" required="required">
+                <small id="nomObligatoire" class="form-text text-muted">Obligatoire</small>
+            </div>
+            <div class="form-group">
+                <label for="inputPrenom">Prénom</label>
+                <input type="prenom" class="form-control" id="inputPrenom" aria-describedby="prenom" placeholder="Entrez votre prénom" required="required">
+                <small id="prenomObligatoire" class="form-text text-muted">Obligatoire</small>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="email" placeholder="Entrez votre adresse Email" required="required">
+                <small id="emailObligatoire" class="form-text text-muted">Obligatoire</small>
+            </div>
+            <div class="form-group">
+                <label for="inputTelephone">Téléphone</label>
+                <input type="telephone" class="form-control" id="inputTelephone" aria-describedby="telephone" placeholder="Entrez votre numéro de téléphone" required="required">
+                <small id="telephoneObligatoire" class="form-text text-muted">Obligatoire</small>
+            </div>
+            <div class="form-group">
+                <label for="messageClient">Votre message</label>
+                <textarea class="form-control" id="messageClient" rows="6"></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+</form>
+
+
     </main>
 
 

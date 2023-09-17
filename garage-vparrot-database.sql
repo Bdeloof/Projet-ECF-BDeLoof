@@ -5,14 +5,14 @@ CREATE TABLE
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(255) NOT NULL,
     commentaire TEXT NOT NULL,
-    note INT NOT NULL
+    note INT(5) NOT NULL
     valide BOOLEAN DEFAULT 0
   );
 
 CREATE TABLE
   voiture (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL,
+    marque VARCHAR(50) NOT NULL,
     prix INT NOT NULL,
     voitureimage LONGTEXT, 
     annee INT NOT NULL,
@@ -22,16 +22,16 @@ CREATE TABLE
 CREATE TABLE
   user (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100),
-    motdepasse LONGTEXT,
+    email VARCHAR(50),
+    password VARCHAR(100),
     estAdmin BOOLEAN DEFAULT 0
   );
 
-INSERT INTO user (id, email, motdepasse, estAdmin)
-VALUES (0, vincentparrotecf@gmail.com, vincentparrotgarage, 1);
+INSERT INTO user (id, email, password, estAdmin)
+VALUES (0, 'vincentparrotecf@gmail.com', 'vincentparrotgarage', 1);
 
 CREATE TABLE
-  demande-info {
+  demandeinfo {
     id INT AUTO_INCREMENT PRIMARY KEY,
     prenom VARCHAR(50) NOT NULL,
     nom VARCHAR(50) NOT NULL,
@@ -43,6 +43,13 @@ CREATE TABLE
 CREATE TABLE
   schedule {
     id INT AUTO_INCREMENT PRIMARY KEY,
-    lundi_vendredi VARCHAR(50),
+    lundivendredi VARCHAR(50),
     samedi VARCHAR(50)
   }
+
+  CREATE TABLE
+    services {
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      titre VARCHAR(50),
+      presentation VARCHAR(300)
+    }

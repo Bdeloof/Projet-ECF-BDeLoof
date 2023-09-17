@@ -94,36 +94,14 @@
             Nous contacter : <br>
             01.23.45.67.89
         </p>
-        <p>
-            Nos horaires :
-            <?php
-
-            require 'connexionDatabase.php';
-
-            $connexionDatabase = ConnexionDatabase::getInstance();
-            $connexion = $connexionDatabase->getConnexion();
-
-            $declaration = $connexion->query("SELECT * FROM schedule");
-            $row = $declaration->fetch(PDO::FETCH_ASSOC);
-            if ($declaration->rowCount() > 0) {
-                $lundiVendredi = $row['lundi_vendredi'];
-                $samedi = $row['samedi'];
-            } else {
-                $lundiVendredi = "Contactez nous pour plus de renseignements";
-                $samedi = "Contactez nous pour plus de renseignements";
-            }
-
-            $connexion = null;
-
-            ?>
-
-            Du Lundi au Vendredi : <?php echo $lundiVendredi; ?> <br>
-            Le Samedi de <?php echo $samedi; ?>
-        </p>
+        <div id="imbricationHoraires">
+            <!-- Imbrication des horaires via JS -->
+        </div>
     </div>
 
     <!-- Import du script bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script src="src/scripts/imbricationHoraires.js"></script>
 
 </footer>
 

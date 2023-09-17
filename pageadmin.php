@@ -1,3 +1,26 @@
+
+
+// <?php
+// 
+// session_start();
+// 
+// if (!isset($_SESSION['email']) || $_SESSION['estAdmin'] != 1) {
+//   header('Location: index.php');
+//   exit();
+// }
+// 
+// if (isset($_POST['deconnexion'])) {
+//   
+//   session_unset();
+//   session_destroy();
+//   header('Location: index.php');
+//   exit();
+// }
+// 
+// ?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -53,7 +76,7 @@
             <div class="m-5">
                 <h1 class="title-site"><b>Administration :</b></h1>
                 <br>
-                <button class="btn btn-danger my-3 mx-3" type="submit" name="logout">Se déconnecter</button>
+                <button class="btn btn-danger my-3 mx-3" type="submit" name="deconnexion">Se déconnecter</button>
             </div>
         </div>
         
@@ -73,7 +96,7 @@
               <input type="mdp" id="mdp" name="motdepasse" required>
             </div>
             <div>
-              <button type="submit" class="btn btn-success">Ajouter un employé</button>
+              <button type="submit" class="btn btn-danger">Ajouter un employé</button>
             </div>
           </form>
         </div>
@@ -86,31 +109,31 @@
           <!--  Connexion et sélection de tous les employés  -->
 
           <?php
-          require_once 'ConnexionDatabase.php';
-
-          $database = ConnexionDatabase::getInstance();
-          $connexion = $database->getConnexion();
-
-          $sql = "SELECT * FROM user WHERE email != 'vincentparrotecf@gmail.com'";
-          $declaration = $connexion->prepare($sql);
-          $declaration->execute();
-
-          // Affichage de la liste des employés
-
-          if ($declaration->rowCount() > 0) {
-            while ($row = $declaration->fetch(PDO::FETCH_ASSOC)) {
-              echo "Email :" . $row['email'];
-              echo "<form method='POST' action='supprimeremploye.php'>";
-              echo "<button type='submit' class='btn btn-danger'>Supprimer un compte employé</button>";
-              echo "</form>";
-            }
-          } else {
-            echo "Aucun employé trouvé.";
-          }
-
-          $connexion = null;
-
-          ?>
+//          require_once 'ConnexionDatabase.php';
+//
+//          $database = ConnexionDatabase::getInstance();
+//          $connexion = $database->getConnexion();
+//
+//          $sql = "SELECT * FROM user WHERE email != 'vincentparrotecf@gmail.com'";
+//          $declaration = $connexion->prepare($sql);
+//          $declaration->execute();
+//
+//          // Affichage de la liste des employés
+//
+//          if ($declaration->rowCount() > 0) {
+//            while ($row = $declaration->fetch(PDO::FETCH_ASSOC)) {
+//              echo "Email :" . $row['email'];
+//              echo "<form method='POST' action='supprimeremploye.php'>";
+//              echo "<button type='submit' class='btn btn-danger'>Supprimer un compte employé</button>";
+//              echo "</form>";
+//            }
+//          } else {
+//            echo "Aucun employé trouvé.";
+//          }
+//
+//          $connexion = null;
+//
+//          ?>
 
         </div>
 
@@ -130,14 +153,38 @@
               <input type="text" id="samedi" name="samedi">
             </div>
             <div>
-              <button type="submit" class="btn btn-success">
+              <button type="submit" class="btn btn-danger">
                 Modifier les horaires
               </button>
             </div>
           </form>
         </div>
 
+
+        <!-- Ajouter un service -->
         
+        <div>
+          <h2 class="title-site">Ajouter un service</h2>
+          <form action="ajouterunservice.php" method="POST">
+            <div>
+              <label for="titre">Titre :</label>
+              <br>
+              <input type="text" id="servicetitre" name="servicetitre" required>
+            </div>
+            <div>
+              <label for="paragraphe">Paragraphe :</label>
+              <br>
+              <input type="text" id="paragraphe" name="paragraphe" required>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-danger">
+                Ajouter un service
+              </button>
+            </div>
+          </form>
+        </div>
+
+
     </main>
 
 

@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -50,17 +56,53 @@
 
     <main>
 
-    <form>
+    <?php
+
+
+    require_once 'connexionDatabase.php';
+    $connexionDatabase = ConnexionDatabase::getInstance();
+    $connexion = $connexionDatabase->getConnexion();
+
+    $messageErreur = '';
+
+    if (isset($_POST['connect']))
+    {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $declaration = $connexion->prepare("SELECT password, estAdmin FROM user WHERE email = :email");
+        $declaration->bindParam(':email', $email);
+        $declaration->execute();
+        $row = $declaration->fetch(PDO::FETCH_ASSOC);
+
+        if ($row && password_verify($password, $row['password'])) {
+            $_SESSION['email'] = $email;
+            $_SESSION['estAdmin'] = $row['estAdmin'];
+
+            $envoiePage = ($row['estAdmin'] == 1) ? 'pageadmin.php' : 'espaceemploye.php';
+
+            echo '<script>window.location.href = "' . $envoiePage . '";</script>';
+        } else {
+            $messageErreur = 'Vous vous êtes trompé d\'identifiants';
+        }
+    }
+
+    $connexion = null;
+
+    ?>
+
+    <p>Authentifier vous</p>
+    <form method="POST">
         <div class="form-group">
-            <label for="exampleInputEmail1">Adresse E-mail</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse E-mail">
-            <small id="emailHelp" class="form-text text-muted">Gardez vos identifiants pour vous</small>
+            <label for="email">Adresse E-mail</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre adresse E-mail">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe">
+            <label for="password">Mot de passe</label>
+            <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe">
+            <small id="avertissement" class="form-text text-muted">Gardez vos identifiants pour vous</small>
         </div>
-        <button type="submit" class="btn custom-bg">Se connecter</button>
+        <button type="submit" name="connect" class="btn custom-bg">Se connecter</button>
     </form>
 
     </main>
